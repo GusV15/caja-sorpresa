@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
-import backGround from "./img/overworld_bg.jpg";
 import question from "./img/question.PNG";
 
 /**
@@ -12,11 +11,24 @@ import flor from "./img/fire_flower.png";
 import moneda from "./img/coin.png";
 
 export default function App() {
+  const [image, setImage] = useState(honguito);
+
+  const arrayImage = [honguito, flor, moneda];
+
+  const handleClick = e => {
+    const imageRandom = Math.floor(Math.random() * arrayImage.length);
+    setImage(arrayImage[imageRandom]);
+  };
+
   return (
     <div className="App">
-      <img className="cajita" src={question} alt="cajita" />
-      <img className="item" src={honguito} alt="item" />
-      <img src={backGround} alt="backGround" />
+        <img
+          onClick={handleClick}
+          className="cajita"
+          src={question}
+          alt="cajita"
+        />
+        <img className="item" src={image} alt="item" />
     </div>
   );
 }

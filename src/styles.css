@@ -3,6 +3,13 @@
   margin: 0;
   padding: 0;
 }
+
+.App {
+  background-image: url('./img/overworld_bg.jpg');
+  width: 80%;
+  height: 380px;
+}
+
 .cajita {
   height: 70px;
   width: 70px;
